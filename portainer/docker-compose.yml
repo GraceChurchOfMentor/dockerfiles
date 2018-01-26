@@ -1,0 +1,14 @@
+version: "3"
+services:
+  portainer:
+    container_name: portainer
+    image: portainer/portainer
+    ports:
+      - 9000:9000
+    environment:
+      - VIRTUAL_HOST=c.gracechurchmentor.org
+      - VIRTUAL_PORT=9000
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /srv/docker/portainer/data:/data
+      - /srv/docker/portainer/certs:/certs
